@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokeapi - APS 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/Logo.png" alt="logo.png" class="size-logo">
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search Pokemon" class="search-input">
+        <p class="helper-text" style="user-select: all;">Pesquise seu pokemon através deste Text Input.</p>
+      </div>
+      <div class="filter">
+        <div style="display: flex; flex-direction: column;">
+            <p>Filtrar por:</p>
+            <div class="types">
+                <div class="click-type" style="background-color: rgb(128, 128, 128); color: white;"><p>Normal</p></div>
+                <div class="click-type" style="background-color: rgb(60, 182, 44); color: white;"><p>Grama</p></div>
+                <div class="click-type" style="background-color: rgb(245, 142, 73); color: white;"><p>Fogo</p></div>
+                <div class="click-type" style="background-color: rgb(25, 159, 248); color: white;"><p>Água</p></div>
+                <div class="click-type" style="background-color: rgb(61, 199, 33); color: white;"><p>Bixo (Bug)</p></div>
+                <div class="click-type" style="background-color: rgb(248, 207, 25); color: white;"><p>Eletrico</p></div>
+                <div class="click-type" style="background-color: rgb(243, 186, 64); color: white;"><p>Rocha</p></div>
+                <div class="click-type" style="background-color: rgb(143, 5, 131); color: white;"><p>Fantasma</p></div>
+                <div class="click-type" style="background-color: rgb(197, 35, 176); color: white;"><p>Venenoso? (Poison)</p></div>
+                <div class="click-type" style="background-color: rgb(222, 113, 255); color: white;"><p>Psíquico</p></div>
+                <div class="click-type" style="background-color: rgb(189, 85, 16); color: white;"><p>Lutador</p></div>
+                <div class="click-type" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra? (Ground)</p></div>
+                <div class="click-type" style="background-color: rgb(248, 114, 25); color: white;"><p>Dragão</p></div>
+                <div class="click-type" style="background-color: black; color: white;"><p>Resetar</p></div>
+            </div>
+        </div>
+        <div class="select-filter">
+          <select>
+            <option>ID ASC</option>
+            <option>ID DESC</option>
+            <option>Nome A-Z</option>
+            <option>Nome Z-A</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <!-- OS POKEMONS APARECERAM AQUI -->
+     <hr>
+    <nav>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+      <div class="pokemon-instance" style="gap: 5%;">
+        <div class="pokemon-box">
+          <img src="images/exemple.png" alt="pokexample.png"> <!--trocadilho foda-->
+          <div class="pokemon-meta">
+            <span class="pokemon-id">#0618</span>
+            <span class="pokemon-exp">EXP: 63</span>
+          </div>
+        </div>
+        <p class="pokemon-name">Stunfisk</p>
+        <div class="tipo-pokemon-box" style="background-color: rgb(212, 187, 43); color: white;"><p>Terra</p></div>
+      </div>
+    </nav>
+    <footer>
+      <p>APS 1 - Engenharia de Software 4° Período - Mateus Mendes da Cunha</p>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

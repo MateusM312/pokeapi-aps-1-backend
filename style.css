@@ -1,0 +1,248 @@
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("fonts/Minecraft.ttf") format("truetype");
+}
+
+p{
+    user-select: none;
+}
+
+img{
+    user-select: none;
+}
+
+.size-logo{
+    height: 160px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 24px;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    background-color: #2a2a2a;
+    color: white;
+    gap: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+  .search-input {
+    width: 15%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    color: #333;
+  }
+ 
+  .search-input::placeholder {
+    color: #999;
+  }
+
+header{
+    margin: 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    flex-direction: column;
+}
+
+.select-filter {
+    width: 230px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 20px;
+    flex-shrink: 0;
+}
+
+.select-filter select{
+    width: 230px;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.select-filter select:hover{
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    filter: brightness(1.15);
+}
+
+.filter {
+    margin-top: 2%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.filter p{
+    margin: 0;
+}
+
+.filter > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.types{
+    font-family: Minecraft;
+    gap: 14px 4px;   
+    font-size: 12px;
+    padding: 1%;
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.click-type{
+    background-color: pink;
+    padding: 8px 4px;
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 180px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.click-type:hover{
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    filter: brightness(1.15);
+}
+
+.click-type:active{
+    transform: scale(0.92);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    filter: brightness(0.9);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease;
+}
+
+.click-type.selected{
+    outline: 3px solid white;
+    outline-offset: -3px;
+    transform: scale(1.05);
+}
+
+nav{
+    display: grid;
+    gap: 2%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 40%;
+    align-items: start;
+    margin: 50px 15px 50px 15px;
+}
+
+hr{
+    margin: 0 15px 0 15px;
+}
+
+footer{
+    display: flex;
+    font-family: Minecraft;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 12px;
+    padding: 1%;
+    margin-top: 180px;
+}
+
+body{
+    margin: 0;
+}
+
+.pokemon-instance{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.pokemon-instance:hover{
+    transform: scale(1.05);
+}
+
+.pokemon-instance:active{
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+.pokemon-box{
+    background-color: #d9d9d9;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-box img{
+    width: 100px;
+    height: 150px;
+}
+
+.pokemon-meta{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 11px;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.pokemon-name{
+    margin: 8px 0 4px 0;
+    font-weight: bold;
+}
+
+.tipo-pokemon-box{
+    border-radius: 999px;
+    height: auto;
+    width: auto;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tipo-pokemon-box p{
+    margin: 0;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
