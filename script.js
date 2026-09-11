@@ -27,13 +27,30 @@ const sort = document.querySelector(".select-filter select");
 const clickTypes = document.querySelectorAll(".click-type");
 
 // quando nn é usado asynch function devemos utilizar .then() para dizer q tem q esperar a internet carregar os dados
-function fetchPokemonsLista(qtd){
+function fetchPokemonsLista(qtd) {
     return fetch('${API}?limit=${qtd}') // ${} coloca var na string
-        .then(res => res.json())
-        .then(data => data.results);
+        .then(res => {
+            if(!res.ok){
+                throw new Error("Não foi possivel pegar seu recurso!");
+            }
+            return res.json();
+        })
+        .then(data => data.results)
+        .catch(error => console.error(error));
 }
 
 async function fetchPokeDetalhar(url) {
     const res = await fetch(url);
     return res.json();
 }
+
+async function loadAllPokemons() {
+    nav.innerHTML = `
+  <img src="https://media.tenor.com/fSsxftCb8w0AAAAj/pikachu-running.gif" style="grid-column: 1/-1; margin: 0 auto; display:block; width:55px;" alt="Carregando...">
+  <p style='grid-column: 1/-1; text-align:center; color:black; font-family: Minecraft;'>Carregando pokémons...</p>
+`;
+
+
+}
+
+loadAllPokemons();
