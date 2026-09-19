@@ -19,24 +19,24 @@ const tiposCor = {
 
 // Antes desse trabalho eu não sabia o nome dos tipos de pokemon e meu codigo tava quebrando por isso
 const typeNames = {
-  normal: "Normal",
-  grass: "Grama",
-  fire: "Fogo",
-  water: "Água",
-  bug: "Bixo (Bug)",
-  electric: "Eletrico",
-  rock: "Rocha",
-  ghost: "Fantasma",
-  poison: "Venenoso? (Poison)",
-  psychic: "Psíquico",
-  fighting: "Lutador",
-  ground: "Terra? (Ground)",
-  dragon: "Dragão",
+    normal: "Normal",
+    grass: "Grama",
+    fire: "Fogo",
+    water: "Água",
+    bug: "Bixo (Bug)",
+    electric: "Eletrico",
+    rock: "Rocha",
+    ghost: "Fantasma",
+    poison: "Venenoso? (Poison)",
+    psychic: "Psíquico",
+    fighting: "Lutador",
+    ground: "Terra? (Ground)",
+    dragon: "Dragão",
 };
 
 // Mapa inverso: texto do botão -> chave do tipo (usado no filtro)
 const labelToType = Object.fromEntries(
-  Object.entries(typeNames).map(([key, label]) => [label, key])
+    Object.entries(typeNames).map(([key, label]) => [label, key])
 );
 
 let allPokes = [];
@@ -54,7 +54,7 @@ closeBtn.addEventListener("click", fecharModal);
 function fetchPokemonsLista(qtd) {
     return fetch(`${API}?limit=${qtd}`) // ${} coloca var na string
         .then(res => {
-            if(!res.ok){
+            if (!res.ok) {
                 throw new Error("Não foi possivel pegar seu recurso!");
             }
             return res.json();
@@ -92,7 +92,7 @@ async function loadAllPokemons() {
 
         renderPokemons(allPokes);
 
-    } catch(error) {
+    } catch (error) {
 
         nav.innerHTML = `
             <img src="https://tenor.com/pt-BR/view/pikachu-pokemon-pfff-walk-gif-3231170403271482048.gif"a
@@ -110,80 +110,82 @@ async function loadAllPokemons() {
 
 // primeira letra fica maiuscula
 function maiusculo(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function criarInstancia(pokemon) {
-  const card = document.createElement("div");
-  card.className = "pokemon-instance";
-  card.style.gap = "5%";
+    const card = document.createElement("div");
+    card.className = "pokemon-instance";
+    card.style.gap = "5%";
 
-  const box = document.createElement("div");
-  box.className = "pokemon-box";
+    const box = document.createElement("div");
+    box.className = "pokemon-box";
 
-  const img = document.createElement("img");
-//   img.src = pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default || "images/exemple.png" || pokemon.sprites?.front_shiny;
-//   img.src = pokemon.sprites?.other?.showdown?.front_default || "images/exemple.png" || pokemon.sprites?.front_shiny;
-  img.src = pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_shiny || "images/exemple.png" || pokemon.sprites?.front_shiny;
-  img.alt = `${pokemon.name}.png`;
+    const img = document.createElement("img");
+    //   img.src = pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default || "images/exemple.png" || pokemon.sprites?.front_shiny;
+    //   img.src = pokemon.sprites?.other?.showdown?.front_default || "images/exemple.png" || pokemon.sprites?.front_shiny;
+    img.src = pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_shiny || "images/exemple.png" || pokemon.sprites?.front_shiny;
+    img.alt = `${pokemon.name}.png`;
 
-  const meta = document.createElement("div");
-  meta.className = "pokemon-meta";
+    const meta = document.createElement("div");
+    meta.className = "pokemon-meta";
 
-  const idSpan = document.createElement("span");
-  idSpan.className = "pokemon-id";
-  idSpan.textContent = `#${String(pokemon.id).padStart(4, "0")}`;
+    const idSpan = document.createElement("span");
+    idSpan.className = "pokemon-id";
+    idSpan.textContent = `#${String(pokemon.id).padStart(4, "0")}`;
 
-  const expSpan = document.createElement("span");
-  expSpan.className = "pokemon-exp";
-  expSpan.textContent = `EXP: ${pokemon.base_experience ?? "?"}`;
+    const expSpan = document.createElement("span");
+    expSpan.className = "pokemon-exp";
+    expSpan.textContent = `EXP: ${pokemon.base_experience ?? "?"}`;
 
-  meta.append(idSpan, expSpan);
-  box.append(img, meta);
+    meta.append(idSpan, expSpan);
+    box.append(img, meta);
 
-  const name = document.createElement("p");
-  name.className = "pokemon-name";
-  name.textContent = maiusculo(pokemon.name);
+    const name = document.createElement("p");
+    name.className = "pokemon-name";
+    name.textContent = maiusculo(pokemon.name);
 
-  card.append(box, name);
+    card.append(box, name);
 
-  pokemon.types.forEach(({ type }) => {
-    const typeBox = document.createElement("div");
-    typeBox.className = "tipo-pokemon-box";
-    typeBox.style.backgroundColor = tiposCor[type.name] || "red";
-    typeBox.style.color = "white";
+    pokemon.types.forEach(({ type }) => {
+        const typeBox = document.createElement("div");
+        typeBox.className = "tipo-pokemon-box";
+        typeBox.style.backgroundColor = tiposCor[type.name] || "red";
+        typeBox.style.color = "white";
 
-    const p = document.createElement("p");
-    p.textContent = typeNames[type.name] || maiusculo(type.name);
+        const p = document.createElement("p");
+        p.textContent = typeNames[type.name] || maiusculo(type.name);
 
-    typeBox.appendChild(p);
-    card.appendChild(typeBox);
-  });
+        typeBox.appendChild(p);
+        card.appendChild(typeBox);
+    });
 
-  card.addEventListener("click", () => {
-    console.log(`Card clicado: ${pokemon.name} (#${pokemon.id})`);
-    abrirModal(pokemon); // passa o objeto inteiro, não só o nome  });
-});
-  return card;
+    card.addEventListener("click", () => {
+        console.log(`Card clicado: ${pokemon.name} (#${pokemon.id})`);
+        abrirModal(pokemon); // passa o objeto inteiro, não só o nome  });
+    });
+    return card;
 }
 
 function renderPokemons(list) {
-  nav.innerHTML = "";
-  if (list.length === 0) {
-    nav.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:white;'>Nenhum pokémon encontrado.</p>";
-    return;
-  }
-  const fragment = document.createDocumentFragment();
-  list.forEach((p) => fragment.appendChild(criarInstancia(p)));
-  nav.appendChild(fragment);
+    nav.innerHTML = "";
+    if (list.length === 0) {
+        nav.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:white;'>Nenhum pokémon encontrado.</p>";
+        return;
+    }
+    const fragment = document.createDocumentFragment();
+    list.forEach((p) => fragment.appendChild(criarInstancia(p)));
+    nav.appendChild(fragment);
 }
 
 function fecharModal() {
+    document.body.classList.remove('lock-scroll');
     const dialog = document.querySelector("dialog");
     dialog.style.display = "none";
 }
 
-function abrirModal(pokemon){
+function abrirModal(pokemon) {
+    document.body.classList.add('lock-scroll');
     const dialog = document.querySelector("dialog");
     dialog.style.display = "flex";
 
@@ -193,11 +195,23 @@ function abrirModal(pokemon){
 
     const name = document.getElementById("poke-detail-name");
     name.textContent = maiusculo(pokemon.name);
-}
 
-// async function fetchPokeDetalhar(url) {
-//     const res = await fetch(url);
-//     return res.json();
-// }
+    const kgs = document.getElementById("kg");
+    kgs.textContent = pokemon.weight + " kg";
+
+    const altura = document.getElementById("altura");
+    altura.textContent = pokemon.height + " m";
+
+    const ataqueDiv = document.getElementById("ataque-div");
+    ataqueDiv.querySelectorAll("p.ataque-nome").forEach(p => p.remove());
+
+    pokemon.abilities.forEach(({ ability }) => {
+        const p = document.createElement("p");
+        p.className = "ataque-nome";
+        p.textContent = maiusculo(ability.name);
+        ataqueDiv.appendChild(p);
+    });
+
+}
 
 loadAllPokemons();
