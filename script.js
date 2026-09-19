@@ -193,6 +193,11 @@ function abrirModal(pokemon) {
     img.src = pokemon.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_shiny || "images/exemple.png" || pokemon.sprites?.front_shiny;
     img.alt = pokemon.name;
 
+    const id = document.getElementById("id");
+    const exp = document.getElementById("exp");
+    id.textContent = `#${String(pokemon.id).padStart(4, "0")}`;
+    exp.textContent = `EXP: ${pokemon.base_experience ?? "?"}`;
+
     const name = document.getElementById("poke-detail-name");
     name.textContent = maiusculo(pokemon.name);
 
@@ -201,6 +206,8 @@ function abrirModal(pokemon) {
 
     const altura = document.getElementById("altura");
     altura.textContent = pokemon.height + " m";
+
+    // os que precisa adicionar mais de um:
 
     const ataqueDiv = document.getElementById("ataque-div");
     ataqueDiv.querySelectorAll("p.ataque-nome").forEach(p => p.remove());
@@ -212,6 +219,24 @@ function abrirModal(pokemon) {
         ataqueDiv.appendChild(p);
     });
 
+    const tipos_modal = document.querySelector(".types-modal");
+    tipos_modal.querySelectorAll("div.type-in-modal").forEach(p => p.remove());
+
+    pokemon.types.forEach(({ type }) => {
+        const div = document.createElement("div");
+        const p = document.createElement("p");
+        div.appendChild(p);
+
+        div.className = "type-in-modal";
+        p.textContent = maiusculo(type.name);
+
+        div.style.backgroundColor = tiposCor[type.name] || "red";
+
+        tipos_modal.appendChild(div);
+    });
+
 }
+
+
 
 loadAllPokemons();

@@ -65,7 +65,8 @@ img{
 
 header{
     margin: 0;
-    min-height: 90vh;
+    min-height: 30vh;
+    max-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,6 +363,7 @@ dialog{
 }
 
 .exp-id-modal{
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -481,16 +483,6 @@ body.lock-scroll {
   overflow: hidden;
 }
 
-.pokemon-id{
-    background-color: white;
-    padding: 4px 6px;
-    border-radius: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    color: #444;
-}
-
 .pokemon-exp{
     background-color: white;
     padding: 4px 6px;
@@ -499,4 +491,22 @@ body.lock-scroll {
     font-weight: bold;
     font-size: 12px;
     color: #444;
+    white-space: nowrap;
+}
+
+.pokemon-id{
+    background-color: white;
+    padding: 4px 6px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #444;
+    white-space: nowrap;
+}
+
+#poke-detail-name{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 8%;
 }
